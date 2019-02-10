@@ -1,5 +1,6 @@
 //Dialect Javascript Doc 
 
+//Word Count
 //Source: http://jsfiddle.net/7DT5z/9/
 $(document).ready(function() {
     $("#word_count").on('keyup', function() {
@@ -17,19 +18,30 @@ $(document).ready(function() {
     });
  }); 
 
+ //Change button color when mouse over
  function changeButtonCol() {
     document.getElementById("findBtn").style.color="red";
 }
-
 function changeButtonColBack() {
     document.getElementById("findBtn").style.color="black";
 }
 
-
+//Event handlers for button color change
 changeCol=document.getElementById("findBtn");
 changeCol.addEventListener("mouseover",changeButtonCol);
 changeColBack=document.getElementById("findBtn");
 changeColBack.addEventListener("mouseout",changeButtonColBack);
 
+
+//split input string into array
+function splitInput() {
+    var txt=document.getElementById("word_count");
+    var str=txt.value.split(/(?=[.\s]|\b)/); 
+    document.getElementById("out").innerHTML = str;
+}
+
+
  find=document.getElementById("findBtn");
- //find.addEventListener("click",);
+ find.addEventListener("click",splitInput);
+
+
