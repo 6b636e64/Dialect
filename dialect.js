@@ -71,9 +71,9 @@ function handleClick() {
     workSplit=splitInput();
     var message=" ";
     if (Boolean(workSplit)==true){
-        message="is Old English";
+        message="is New England English";
     }else{
-        message="not Old English";
+        message="not New England English";
     }
     document.getElementById("out").innerHTML = message;
 }
