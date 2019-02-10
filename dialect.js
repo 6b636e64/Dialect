@@ -69,7 +69,13 @@ function splitInput() {
 
 function handleClick() {
     workSplit=splitInput();
-    document.getElementById("out").innerHTML = Boolean(workSplit);
+    var message=" ";
+    if (Boolean(workSplit)==true){
+        message="is Old English";
+    }else{
+        message="not Old English";
+    }
+    document.getElementById("out").innerHTML = message;
 }
  find=document.getElementById("findBtn");
  find.addEventListener("click",handleClick);
